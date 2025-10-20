@@ -1,0 +1,18 @@
+SCANNING
+
+nmap -A -T4 -oX scan.xmal <IP>
+
+nmap — runs the network scanner program Nmap against the target IP.
+-A — enables aggressive detection: OS detection, version detection, script scanning, and traceroute.
+-T4 — sets timing to "aggressive" for faster scanning (uses more parallelism; be cautious on unstable networks).
+-oX scan.xmal — tells Nmap to write XML output to the file scan.xmal (likely a typo — normally scan.xml).
+
+TO CONVERT SCAN.XML INTO HTML
+
+xsltproc scan.xml -o scan.html
+
+TO OPEN THIS HTML FILE
+
+xdg-open scan.html
+
+NOTE: not open this file as root terminal.
